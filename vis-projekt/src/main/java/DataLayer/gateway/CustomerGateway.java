@@ -93,9 +93,5 @@ public class CustomerGateway
         }
 		
 	}
-	
-	
-	
-	
-	
+
 }

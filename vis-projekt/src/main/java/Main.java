@@ -20,6 +20,7 @@ public class Main
     		System.out.println(" 3 - Show All Orders");
     		System.out.println(" 4 - Create Order");
     		System.out.println(" 5 - Edit Customer ");
+    		System.out.println(" 6 - Delete Order ");
     		
     		BufferedReader ans = new BufferedReader(new InputStreamReader(System.in));
     		String answer = ans.readLine();
@@ -52,6 +53,10 @@ public class Main
     		case "5" :
     			System.out.print("ID of Customer");
     			customerMapper.editCustomer(Integer.parseInt(ans.readLine()));
+    			break;
+    		case "6" :
+    			System.out.print("ID of Order");
+    			orderMapper.deleteOrder(Integer.parseInt(ans.readLine()));
     			break;
     			
     		default:

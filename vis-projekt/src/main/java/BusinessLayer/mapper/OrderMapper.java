@@ -31,14 +31,7 @@ public class OrderMapper
     	return result;
     }
     
-    private void printOrder(Order o) 
-    {
-    	 System.out.println("  ID: " + o.getId()  
-		+ "  Type of Menu: " + o.getType()
-		+ "  Customer ID: " + o.getCustomerId()
-		+ "  Menu ID: " + o.getMenuId()
-		);
-	}
+
 
 	public void addOrder() throws IOException
     {
@@ -65,12 +58,14 @@ public class OrderMapper
     	gw.addOrder(new Order(id_order,type,customer_id,0));
     }
     
-    public void editOrder(int id,Order o)
+    private void printOrder(Order o) 
     {
-    	OrderGateway gw = new OrderGateway();
-    	gw.editOrder(id,o);
-    	
-    }
+    	 System.out.println("  ID: " + o.getId()  
+		+ "  Type of Menu: " + o.getType()
+		+ "  Customer ID: " + o.getCustomerId()
+		+ "  Menu ID: " + o.getMenuId()
+		);
+	}
 
 	public void printAllOrders() 
 		{
@@ -82,6 +77,11 @@ public class OrderMapper
 													+ "  Menu ID: " + n.getMenuId()
 													));
 		}
+
+	public void deleteOrder(int id) {
+		OrderGateway gw = new OrderGateway();
+		gw.deleteOrder(id);
+	}
     
     
 }

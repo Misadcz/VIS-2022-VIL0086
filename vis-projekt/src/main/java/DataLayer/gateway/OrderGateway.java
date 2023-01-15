@@ -10,9 +10,6 @@ import DataLayer.connection.SQLConnection;
 
 public class OrderGateway {
 	
-	
-	
-
 	public void addOrder(Order o) {
 		SQLConnection url = new SQLConnection();
 		try (Connection connection = DriverManager.getConnection(url.getConnection());
@@ -27,11 +24,6 @@ public class OrderGateway {
 	        catch (SQLException e) {
 	            e.printStackTrace();
 	        }
-		
-	}
-	
-	public void editOrder(int id, Order o) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -78,6 +70,20 @@ public class OrderGateway {
 	            e.printStackTrace();
 	        }
 		return null;
+	}
+
+	public void deleteOrder(int id) {
+		SQLConnection url = new SQLConnection();
+        try (Connection connection = DriverManager.getConnection(url.getConnection());
+             Statement statement = connection.createStatement();) {
+
+            String deleteSql = "DELETE FROM Orders WHERE id_orders = " + id;
+            statement.executeUpdate(deleteSql);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+		
 	}
 
 

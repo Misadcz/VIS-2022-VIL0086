@@ -10,7 +10,11 @@ import DataLayer.gateway.CustomerGateway;
 
 public class CustomerMapper
 {
-	Customer customer;
+	//Customer customer;
+	public CustomerMapper()
+	{
+		
+	}
     
 	public void addCustomer(Customer c)	
 	{
@@ -62,5 +66,7 @@ public class CustomerMapper
 		gw.editCustomer(new Customer(id,firstname,lastname,email,alergy));
 		
 	}
+
+	
     
 }

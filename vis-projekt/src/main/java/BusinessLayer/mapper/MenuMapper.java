@@ -6,6 +6,11 @@ import DataLayer.gateway.MenuGateway;
 public class MenuMapper
 {
 	
+	public MenuMapper()
+	{
+		
+	}
+	
 	public void addMenu(Menu m)
     {
 		MenuGateway gw = new MenuGateway();
