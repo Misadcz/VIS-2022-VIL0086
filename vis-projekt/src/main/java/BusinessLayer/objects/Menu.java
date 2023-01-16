@@ -46,5 +46,17 @@ public class Menu
     public int getSugar() {return this.sugar;}
     public int getSalt() {return this.salt;}
     public int getFiber() {return this.fiber;}
-   
+    
+    public void setBreakfast(String breakfast) { this.breakfast = breakfast;}
+    public void setSnack_1(String snack) { this.snack_1 = snack;}
+    public void setLunch(String lunch) { this.lunch = lunch;}
+    public void setSnack_2(String snack) { this.snack_2 = snack;}
+    public void setDinner(String dinner) { this.dinner = dinner;}
+    public void setCalories(int calories) { this.calories = calories;}
+    public void setCarbohydrate(int carbs) { this.carbohydrate = carbs;}
+    public void setFat(int fat) { this.fat = fat;}
+    public void setProtein(int protein) { this.protein = protein;}
+    public void setSugar(int sugar) { this.sugar = sugar;}
+    public void setSalt(int salt) { this.salt = salt;}
+    public void setFiber(int fiber) { this.fiber = fiber;}
 }

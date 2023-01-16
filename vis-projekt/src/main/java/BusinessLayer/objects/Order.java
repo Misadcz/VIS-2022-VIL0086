@@ -21,9 +21,23 @@ public class Order
     public String getType()
     {return this.type_menu;}
     
+    public void setType(String menu)
+    {this.type_menu = menu;}
+    
     public int getCustomerId()
     {return this.customer_id_customer;}
     
+    public void setCustomerId(int CustomerId)
+    {this.customer_id_customer = CustomerId;}
+    
     public int getMenuId()
     {return this.menu_id_menu;}
+    
+    public void setMenuId(int MenuId)
+    { this.menu_id_menu = MenuId;}
+    
+    
+    
+    
+    
 }

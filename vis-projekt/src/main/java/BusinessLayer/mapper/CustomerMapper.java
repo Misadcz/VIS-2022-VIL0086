@@ -1,8 +1,4 @@
 package BusinessLayer.mapper;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import BusinessLayer.objects.Customer;
@@ -10,63 +6,34 @@ import DataLayer.gateway.CustomerGateway;
 
 public class CustomerMapper
 {
-	//Customer customer;
+	CustomerGateway customerGateway;
 	public CustomerMapper()
 	{
-		
+		this.customerGateway = new CustomerGateway();
 	}
     
-	public void addCustomer(Customer c)	
+	public void insert(Customer customer)	
 	{
-		CustomerGateway gw = new CustomerGateway();
-		gw.addCustomer(c);
+		customerGateway.insert(customer);
 	}
 	
-	public Customer findByID(int id)
+	public Customer find(int id)
 	{
-		CustomerGateway gw = new CustomerGateway();
-		return gw.findByID(id);
+		return customerGateway.find(id);
+	}
+	
+	public void update(Customer customer)
+	{
+		customerGateway.update(customer);
+	}
+	
+	public void delete(Customer customer)
+	{
+		customerGateway.delete(customer);
+	}
 		
-	}
-    
-	
-	public ArrayList<Customer> getAllCustomers()
+	public ArrayList<Customer> selectAll()
 	{
-		CustomerGateway gw = new CustomerGateway();
-		return gw.getAllCustomers();
-	}
-	
-	
-	public void printAllCustomers()
-	{
-		CustomerGateway gw = new CustomerGateway();
-		ArrayList<Customer> temp = gw.getAllCustomers();
-		temp.forEach((n) -> System.out.println("  ID: " + n.getId() 
-												+ "  First name: " + n.getFirstname() 
-												+ "  Last name: " + n.getLastname()
-												+ "  Email: " + n.getEmail()
-												+ "  Date Registration: " + n.getDate()
-												+ "  Alergies: " + n.getAlergy()
-												));
-	}
-
-	public void editCustomer(int id) throws IOException 
-	{
-		CustomerGateway gw = new CustomerGateway();
-		BufferedReader ans = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Write new first name:");
-		String firstname = ans.readLine();
-		System.out.println("Write new last name:");
-		String lastname = ans.readLine();
-		System.out.println("Write new email:");
-		String email = ans.readLine();
-		System.out.println("Write new alergy:");
-		String alergy = ans.readLine();
-		
-		gw.editCustomer(new Customer(id,firstname,lastname,email,alergy));
-		
-	}
-
-	
-    
+		 return customerGateway.selectAll();
+	} 
 }
